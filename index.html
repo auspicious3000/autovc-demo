@@ -1,0 +1,290 @@
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AutoVC Demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						
+					</header>
+
+				<!-- Menu -->
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1><font style="font-variant: small-caps">AutoVC</font>: Zero-Shot Voice Style Transfer with Only Autoencoder Loss - <font color = #58c3c2>Audio Demo</font></h1>
+							<font size = 5><p><i> Anonymous Submission for ICML 2019</i></p></font>
+							<p></p>
+							<!--<a href="#source" class="button fit">Source Code</a>-->
+							<a href="#code" class="button fit">Code Release</a>
+							<a href="#traditional" class="button fit">Traditional voice conversion</a>
+							<a href="#zero-shot" class="button fit">Zero-shot voice conversion</a>
+							<br></br><br></br>
+							<!-- Text -->
+							<section>
+								<a name="code"></a>
+								<h2><font size = 5 color= #58c3c2>Code Release</font></h2>
+								<p>Our code is released <a href="https://github.com/anonymous0817/autovc"><b>here</b></a>.
+							</section>
+							    <section>
+							    <a name="traditional"></a>
+							    	<h2><font size = 5 color= #58c3c2>Traditional Many-to-Many Conversion</font></h2>
+							    	<p>(Section 5.2 in the paper)</p>
+							    	<p>Traditional many-to-many conversion performs voice conversion from and to speakers that are present in the training set. Four systems are implmented:</p>
+							    	<ul class="12u 12u$(medium)">
+										<li><b><font style="font-variant: small-caps">AutoVC</font></b> - the proposed autoencoder-based conversion algorithm</li>
+										<li><b><font style="font-variant: small-caps">AutoVC-one-hot</font></b> - the proposed autoencoder-based conversion algorithm conditioned on one-hot speaker embeddings</li>
+										<li><b>StarGAN-VC</b> - a voice conversion system that adopts the StarGAN paradigm.</li>
+										<li><b>Chou et. al.</b> - a voice conversion system combining autoencoder with GAN and speaker classifier.</li>
+									</ul>
+									<p>Below are a few demo audios.</p>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th><font color= #58c3c2>Source Speaker / Speech</font></th>
+													<th><font color= #58c3c2>Target Speaker / Speech</font></th>
+													<th><font color= #58c3c2>Conversion</font></th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td rowspan="8">p270 (Male) <audio controls=""><source src="audios/ground_truth1/p270_001.wav" /><embed height="50" src="audios/ground_truth1/p270_001.wav" width="100"></embed></audio></td>
+													<td rowspan="4">p256 (Male) <audio controls=""><source src="audios/ground_truth2/p256_002.wav" /><embed height="50" src="audios/ground_truth2/p256_002.wav" width="100"></embed></audio></td>
+													<td><font style="font-variant: small-caps">AutoVC</font></td>
+													<td><audio controls=""><source src="audios/90_01_10000/p270_p256_1000000.wav" /><embed height="50" src="audios/90_01_10000/p270_p256_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td><font style="font-variant: small-caps">AutoVC-one-hot</font></td>
+													<td><audio controls=""><source src="audios/90_02_10000/p270_p256_1000000.wav" /><embed height="50" src="audios/90_02_10000/p270_p256_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>StarGAN-VC</td>
+													<td><audio controls=""><source src="audios/stargan/p270_p256.wav" /><embed height="50" src="audios/stargan/p270_p256.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>Chou et. al.</td>
+													<td><audio controls=""><source src="audios/tw/270_256_001.wav" /><embed height="50" src="audios/tw/270_256_001.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+
+												<tr>
+													<td rowspan="4">p228 (Female) <audio controls=""><source src="audios/ground_truth2/p228_002.wav" /><embed height="50" src="audios/ground_truth2/p228_002.wav" width="100"></embed></audio></td>
+													<td><font style="font-variant: small-caps">AutoVC</font></td>
+													<td><audio controls=""><source src="audios/90_01_10000/p270_p228_1000000.wav" /><embed height="50" src="audios/90_01_10000/p270_p228_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td><font style="font-variant: small-caps">AutoVC-one-hot</font></td>
+													<td><audio controls=""><source src="audios/90_02_10000/p270_p228_1000000.wav" /><embed height="50" src="audios/90_02_10000/p270_p228_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>StarGAN-VC</td>
+													<td><audio controls=""><source src="audios/stargan/p270_p228.wav" /><embed height="50" src="audios/stargan/p270_p228.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>Chou et. al.</td>
+													<td><audio controls=""><source src="audios/tw/270_228_001.wav" /><embed height="50" src="audios/tw/270_228_001.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+
+
+												<tr>
+													<td rowspan="8">p225 (Female) <audio controls=""><source src="audios/ground_truth1/p225_001.wav" /><embed height="50" src="audios/ground_truth1/p225_001.wav" width="100"></embed></audio></td>
+													<td rowspan="4">p256 (Male) <audio controls=""><source src="audios/ground_truth2/p256_002.wav" /><embed height="50" src="audios/ground_truth2/p256_002.wav" width="100"></embed></audio></td>
+													<td><font style="font-variant: small-caps">AutoVC</font></td>
+													<td><audio controls=""><source src="audios/90_01_10000/p225_p256_1000000.wav" /><embed height="50" src="audios/90_01_10000/p225_p256_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td><font style="font-variant: small-caps">AutoVC-one-hot</font></td>
+													<td><audio controls=""><source src="audios/90_02_10000/p225_p256_1000000.wav" /><embed height="50" src="audios/90_02_10000/p225_p256_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>StarGAN-VC</td>
+													<td><audio controls=""><source src="audios/stargan/p225_p256.wav" /><embed height="50" src="audios/stargan/p225_p256.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>Chou et. al.</td>
+													<td><audio controls=""><source src="audios/tw/225_256_001.wav" /><embed height="50" src="audios/tw/225_256_001.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+
+												<tr>
+													<td rowspan="4">p228 (Female) <audio controls=""><source src="audios/ground_truth2/p228_002.wav" /><embed height="50" src="audios/ground_truth2/p228_002.wav" width="100"></embed></audio></td>
+													<td><font style="font-variant: small-caps">AutoVC</font></td>
+													<td><audio controls=""><source src="audios/90_01_10000/p225_p228_1000000.wav" /><embed height="50" src="audios/90_01_10000/p225_p228_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td><font style="font-variant: small-caps">AutoVC-one-hot</font></td>
+													<td><audio controls=""><source src="audios/90_02_10000/p225_p228_1000000.wav" /><embed height="50" src="audios/90_02_10000/p225_p228_1000000.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>StarGAN-VC</td>
+													<td><audio controls=""><source src="audios/stargan/p225_p228.wav" /><embed height="50" src="audios/stargan/p225_p228.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+												<tr>
+													<td>Chou et. al.</td>
+													<td><audio controls=""><source src="audios/tw/225_228_001.wav" /><embed height="50" src="audios/tw/225_228_001.wav" width="100"></embed></audio>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+									<a href="#" class="button special">Back to Top</a>
+									<a href="#traditional" class="button special">Back to Section Start</a>
+									<br></br><br></br>
+								</section>
+								<!--<a name="source"></a>
+									<h2><font size = 5 color= #58c3c2>Source Code</font></h2>
+									<p><font size=5>
+										Source code can be found <a href=https://github.com/zhangyangbill/GRAB/tree/master/code_release><b>here</b></a>.
+									</font></p>
+									<br></br><br></br>-->
+								<a name="zero-shot"></a>
+									<h2><font size = 5 color= #58c3c2>Zero-Shot Voice Conversion</font></h2>
+									<p>(Section 5.3 in the paper)</p>
+									<p>Zero-shot voice conversion performs conversion from and/or to speakers that are unseen during training, based on only 20 seconds of audio of the speakers. Only <font style="font-variant: small-caps">AutoVC</font> is implemented for zero-shot voice conversion.</p>
+
+									<p>The following table shows conversions to seen speakers.</p>
+									<div class="table-wrapper">
+										<table vertical-align="bottom">
+											<tr>
+												<td></td>
+												<td></td>
+												<th colspan="2" align="right"><font color= #58c3c2>Target Speakers / Speech</font></th>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<th scope="column"><font color= #58c3c2>P227 (Seen male)</font><audio controls=""><source src="audios/ground_truth2/p227_002.wav" /><embed height="50" src="audios/ground_truth2/p227_002.wav" width="100"></embed></audio></th>
+												<th scope="column"><font color= #58c3c2>P225 (Seen female)</font><audio controls=""><source src="audios/ground_truth2/p225_002.wav" /><embed height="50" src="audios/ground_truth2/p225_002.wav" width="100"></embed></audio></th>
+												<!--<th scope="column"><font color= #58c3c2>P252 (Uneen male)</font><audio controls=""><source src="audios/ground_truth2/p252_002.wav" /><embed height="50" src="audios/ground_truth2/p252_002.wav" width="100"></embed></audio></th>
+												<th scope="column"><font color= #58c3c2>P261 (Unseen female)</font><audio controls=""><source src="audios/ground_truth2/p261_002.wav" /><embed height="50" src="audios/ground_truth2/p261_002.wav" width="100"></embed></audio></th>-->
+											</tr>
+											<tr>
+												<th scope="row" rowspan="4">Source Speaker / Speech</th>
+												<th scope="row">P227 (Seen male)<br><audio controls=""><source src="audios/ground_truth1/p227_001.wav" /><embed height="50" src="audios/ground_truth2/p227_001.wav" width="100"></embed></audio></th>
+												<td><audio controls=""><source src="audios/89_01/p227_p227_1000000.wav" /><embed height="50" src="audios/89_01/p227_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p227_p225_1000000.wav" /><embed height="50" src="audios/89_01/p227_p225_1000000.wav" width="100"></embed></audio></td>
+												<!--<td><audio controls=""><source src="audios/89_01/p227_p252_1000000.wav" /><embed height="50" src="audios/89_01/p227_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p227_p261_1000000.wav" /><embed height="50" src="audios/89_01/p227_p261_1000000.wav" width="100"></embed></audio></td>-->
+											</tr>
+											<tr>
+												<th scope="row">P225 (Seen female)<br><audio controls=""><source src="audios/ground_truth1/p225_001.wav" /><embed height="50" src="audios/ground_truth2/p225_001.wav" width="100"></embed></audio></th>
+												<td><audio controls=""><source src="audios/89_01/p225_p227_1000000.wav" /><embed height="50" src="audios/89_01/p225_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p225_p225_1000000.wav" /><embed height="50" src="audios/89_01/p225_p225_1000000.wav" width="100"></embed></audio></td>
+												<!--<td><audio controls=""><source src="audios/89_01/p225_p252_1000000.wav" /><embed height="50" src="audios/89_01/p225_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p225_p261_1000000.wav" /><embed height="50" src="audios/89_01/p225_p261_1000000.wav" width="100"></embed></audio></td>-->
+											</tr>
+											<tr>
+												<th scope="row">P252 (Unseen male)<br><audio controls=""><source src="audios/ground_truth1/p252_001.wav" /><embed height="50" src="audios/ground_truth2/p252_001.wav" width="100"></embed></audio></th>
+												<td><audio controls=""><source src="audios/89_01/p252_p227_1000000.wav" /><embed height="50" src="audios/89_01/p252_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p252_p225_1000000.wav" /><embed height="50" src="audios/89_01/p252_p225_1000000.wav" width="100"></embed></audio></td>
+												<!--<td><audio controls=""><source src="audios/89_01/p252_p252_1000000.wav" /><embed height="50" src="audios/89_01/p252_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p252_p261_1000000.wav" /><embed height="50" src="audios/89_01/p252_p261_1000000.wav" width="100"></embed></audio></td>-->
+											</tr>
+											<tr>
+												<th scope="row">P261 (Seen female)<br><audio controls=""><source src="audios/ground_truth1/p261_001.wav" /><embed height="50" src="audios/ground_truth2/p261_001.wav" width="100"></embed></audio></th>
+												<td><audio controls=""><source src="audios/89_01/p261_p227_1000000.wav" /><embed height="50" src="audios/89_01/p261_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p261_p225_1000000.wav" /><embed height="50" src="audios/89_01/p261_p225_1000000.wav" width="100"></embed></audio></td>
+												<!--<td><audio controls=""><source src="audios/89_01/p261_p252_1000000.wav" /><embed height="50" src="audios/89_01/p261_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p261_p261_1000000.wav" /><embed height="50" src="audios/89_01/p261_p261_1000000.wav" width="100"></embed></audio></td>-->
+											</tr>
+										</table>
+									</div>
+
+									<p>The following table shows conversions to unseen speakers.</p>
+									<div class="table-wrapper">
+										<table>
+											<tr>
+												<td></td>
+												<td></td>
+												<th colspan="2" align="right"><font color= #58c3c2>Target Speakers / Speech</font></th>
+											</tr>
+											<tr>
+												<td></td>
+												<td></td>
+												<!--<th scope="column"><font color= #58c3c2>P227 (Seen male)</font><audio controls=""><source src="audios/ground_truth2/p227_002.wav" /><embed height="50" src="audios/ground_truth2/p227_002.wav" width="100"></embed></audio></th>
+												<th scope="column"><font color= #58c3c2>P225 (Seen female)</font><audio controls=""><source src="audios/ground_truth2/p225_002.wav" /><embed height="50" src="audios/ground_truth2/p225_002.wav" width="100"></embed></audio></th>-->
+												<th scope="column"><font color= #58c3c2>P252 (Uneen male)</font><audio controls=""><source src="audios/ground_truth2/p252_002.wav" /><embed height="50" src="audios/ground_truth2/p252_002.wav" width="100"></embed></audio></th>
+												<th scope="column"><font color= #58c3c2>P261 (Unseen female)</font><audio controls=""><source src="audios/ground_truth2/p261_002.wav" /><embed height="50" src="audios/ground_truth2/p261_002.wav" width="100"></embed></audio></th>
+											</tr>
+											<tr>
+												<th scope="row" rowspan="4">Source Speaker / Speech</th>
+												<th scope="row">P227 (Seen male)<br><audio controls=""><source src="audios/ground_truth1/p227_001.wav" /><embed height="50" src="audios/ground_truth2/p227_001.wav" width="100"></embed></audio></th>
+												<!--<td><audio controls=""><source src="audios/89_01/p227_p227_1000000.wav" /><embed height="50" src="audios/89_01/p227_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p227_p225_1000000.wav" /><embed height="50" src="audios/89_01/p227_p225_1000000.wav" width="100"></embed></audio></td>-->
+												<td><audio controls=""><source src="audios/89_01/p227_p252_1000000.wav" /><embed height="50" src="audios/89_01/p227_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p227_p261_1000000.wav" /><embed height="50" src="audios/89_01/p227_p261_1000000.wav" width="100"></embed></audio></td>
+											</tr>
+											<tr>
+												<th scope="row">P225 (Seen female)<br><audio controls=""><source src="audios/ground_truth1/p225_001.wav" /><embed height="50" src="audios/ground_truth2/p225_001.wav" width="100"></embed></audio></th>
+												<!--<td><audio controls=""><source src="audios/89_01/p225_p227_1000000.wav" /><embed height="50" src="audios/89_01/p225_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p225_p225_1000000.wav" /><embed height="50" src="audios/89_01/p225_p225_1000000.wav" width="100"></embed></audio></td>-->
+												<td><audio controls=""><source src="audios/89_01/p225_p252_1000000.wav" /><embed height="50" src="audios/89_01/p225_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p225_p261_1000000.wav" /><embed height="50" src="audios/89_01/p225_p261_1000000.wav" width="100"></embed></audio></td>
+											</tr>
+											<tr>
+												<th scope="row">P252 (Unseen male)<br><audio controls=""><source src="audios/ground_truth1/p252_001.wav" /><embed height="50" src="audios/ground_truth2/p252_001.wav" width="100"></embed></audio></th>
+												<!--<td><audio controls=""><source src="audios/89_01/p252_p227_1000000.wav" /><embed height="50" src="audios/89_01/p252_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p252_p225_1000000.wav" /><embed height="50" src="audios/89_01/p252_p225_1000000.wav" width="100"></embed></audio></td>-->
+												<td><audio controls=""><source src="audios/89_01/p252_p252_1000000.wav" /><embed height="50" src="audios/89_01/p252_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p252_p261_1000000.wav" /><embed height="50" src="audios/89_01/p252_p261_1000000.wav" width="100"></embed></audio></td>
+											</tr>
+											<tr>
+												<th scope="row">P261 (Seen female)<br><audio controls=""><source src="audios/ground_truth1/p261_001.wav" /><embed height="50" src="audios/ground_truth2/p261_001.wav" width="100"></embed></audio></th>
+												<!--<td><audio controls=""><source src="audios/89_01/p261_p227_1000000.wav" /><embed height="50" src="audios/89_01/p261_p227_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p261_p225_1000000.wav" /><embed height="50" src="audios/89_01/p261_p225_1000000.wav" width="100"></embed></audio></td>-->
+												<td><audio controls=""><source src="audios/89_01/p261_p252_1000000.wav" /><embed height="50" src="audios/89_01/p261_p252_1000000.wav" width="100"></embed></audio></td>
+												<td><audio controls=""><source src="audios/89_01/p261_p261_1000000.wav" /><embed height="50" src="audios/89_01/p261_p261_1000000.wav" width="100"></embed></audio></td>
+											</tr>
+										</table>
+									</div>
+
+									<a href="#" class="button special">Back to Top</a>
+									<a href="#zero-shot" class="button special">Back to Section Start</a>
+									<br></br><br></br>
+								</section>
+								
+							
+									
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
